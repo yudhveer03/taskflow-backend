@@ -24,6 +24,12 @@ app.use(express.json())
 app.use(cookieParser());
 app.use(limiter);
 
+app.use((req, res, next) => {
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(200);
+    }
+    next();
+});
 
 app.use('/api/auth', auth);
 app.use("/api/boards",board)
