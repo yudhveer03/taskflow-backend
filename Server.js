@@ -1,14 +1,12 @@
-require('dotenv').config()
-const app = require('./src/app')
+require("dotenv").config();
 
+const app = require("./src/app");
+const connectDb = require("./src/Db/DB");
 
-const connectDb = require('./src/Db/DB')
+connectDb();
 
+const PORT = process.env.PORT || 8000;
 
-
-connectDb(); 
-
-app.listen('8000', (req, res) => {
-    console.log('Server Started on Port 8000')
-    
-})
+app.listen(PORT, () => {
+    console.log(`Server Started on Port ${PORT}`);
+});
