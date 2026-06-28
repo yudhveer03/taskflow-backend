@@ -15,7 +15,7 @@ const limiter = rateLimit({
 })
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Wildcard '*' nahi hona chahiye, exact origin dalein
+    origin: 'https://taskflow-frontend-brown-psi.vercel.app', // Wildcard '*' nahi hona chahiye, exact origin dalein
     credentials: true,                // Yeh cookies allow karega
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
