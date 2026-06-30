@@ -10,7 +10,8 @@ const cors = require('cors');
 
 
 app.use(cors({
-    origin: 'https://taskflow-frontend-brown-psi.vercel.app',
+    origin: ['https://taskflow-frontend-brown-psi.vercel.app',
+        'http://localhost:5173', 'http://localhost:3000'],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept']
