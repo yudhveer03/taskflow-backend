@@ -6,16 +6,19 @@ const validator = require('../../middleware/express-validator')
 const jwtMiddleware = require('../../middleware/jwt.middleware')
 
 router.
-    post('/register',jwtMiddleware,
-    validator.registerValidationRules,
-    authController.register)
+    post('/register',
+        jwtMiddleware,
+        validator.registerValidationRules,
+        authController.register)
 
 router.
     post('/login',
+        jwtMiddleware,
         authController.login)
 
 router.
-    post('/logout',
+    post1('/logout',
+        jwtMiddleware,
         authController.logout)
 
 
