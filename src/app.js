@@ -10,14 +10,14 @@ const cors = require('cors');
 
 
 app.use(cors({
-    origin: ['https://taskflow-frontend-brown-psi.vercel.app',
-        'http://localhost:5173', 'http://localhost:3000'],
-    credentials: true,
+    origin: ['https://taskflow-frontend-brown-psi.vercel.app'],
+    
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept']
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
+    credentials:true
 }));
 
-app.options(/.*/, cors());
+
 
 const limiter = rateLimit({
     windowMs: 1 * 60 * 1000, // 1 Minute
