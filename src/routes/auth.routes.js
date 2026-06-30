@@ -3,9 +3,10 @@ const bcrypt = require('bcryptjs')
 const router= express.Router()
 const authController = require('../../controllers/auth.controller')
 const validator = require('../../middleware/express-validator')
+const jwtMiddleware = require('../../middleware/jwt.middleware')
 
 router.
-    post('/register',
+    post('/register',jwtMiddleware,
     validator.registerValidationRules,
     authController.register)
 
